@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>스쿨버스알림이</title>
+    <style>
+      /* CSS code goes here */
+      .head {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      .nav {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      .main {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 20px;
+        min-height: calc(
+          70vh - 40px
+        ); /* Subtract the height of the pagination section */
+      }
+      .footer {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #f8f8f8;
+        text-align: center;
+      }
+      .footer p {
+        margin: 5px;
+      }
+      .footer p:first-child {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .footer p:nth-child(2),
+      .footer p:nth-child(3) {
+        font-size: 14px;
+      }
+      .footer p:last-child {
+        font-style: italic;
+      }
+      nav ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      nav li {
+        margin-right: 10px;
+      }
+
+      nav li:last-child {
+        margin-right: 0;
+      }
+      nav li.login-button {
+        margin-right: 0;
+        margin-left: auto;
+      }
+      /*테이블*/
+      .bulletin-board {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+        background-color: #f8f8f8;
+        border: 1px solid #ccc;
+        font-family: Arial, sans-serif;
+      }
+
+      .bulletin-board th,
+      .bulletin-board td {
+        padding: 10px;
+        text-align: left;
+      }
+
+      .bulletin-board thead th {
+        background-color: #333;
+        color: #fff;
+      }
+
+      .bulletin-board tbody tr:nth-child(odd) {
+        background-color: #f2f2f2;
+      }
+
+      .bulletin-board tbody td:first-child {
+        font-weight: bold;
+      }
+
+      .bulletin-board tbody td:last-child {
+        font-style: italic;
+      }
+
+      /*페이징*/
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .page-numbers {
+        display: flex;
+        gap: 10px;
+      }
+
+      .pagination button {
+        padding: 5px 10px;
+      }
+      
+      #replyBot {
+        background-color: #f0a80f;
+        width: 3.7rem;
+		height: 3.7rem;
+		border-radius: 30px;
+		position: fixed;
+		right: 2rem;
+		bottom:2rem;
+		z-index: 9999;
+	  }
+    </style>
+    <link rel="stylesheet" media="screen" href="/web.css"/>
+	<script src="/script.js"></script>
+  </head>
+  <body>				
+    <button id="replyBot" onclick="chat();">
+      <img src="https://cdn-icons-png.flaticon.com/512/4711/4711987.png"/>
+	</button>
+    <h1>스쿨버스 알림이</h1>
+    <nav calss="nav">
+      <ul class="nav ul">
+        <li class="nav li"><a href="http://localhost:8080/bus">버스정보</a></li>
+        <li class="nav li"><a href="http://localhost:8080/community">커뮤니티</a></li>
+        <li class="nav li login-button"><a href="http://localhost:8080/login">로그인</a></li>
+      </ul>
+    </nav>
+    </div>
+    <main class="main">
+      <div class="container">
+		<form action="#" th:action="@{/signup}" th:object="${siteuser}" method="post">
+		<h1>사용자등록</h1>
+		<table id="usersignup">
+			<tr>
+				<td>이름</td>
+				<td><input type="text" th:field="*{name}"/></td>
+			</tr>
+			<tr>
+				<td>이메일</td>
+				<td><input type="email" th:field="*{email}"/></td>
+			</tr>
+			<tr>
+				<td>전화번호</td>
+				<td><input type="tel" th:field="*{phoneNumber}"/></td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td><input type="text" th:field="*{address}"/></td>
+			</tr>
+			<tr>
+				<td>암호</td>
+				<td><input type="password" th:field="*{passwd}"/></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="등록"/>
+				</td>	
+			</tr>
+		</table>		
+	</form>
+		
+	  </div>
+    </main>
+  </body>
+  <footer class="footer">
+    <p>C/S Center</p>
+    <p>email : hong@mail.com</p>
+    <p>kakao talk : hong123</p>
+    <p>오전 9시부터 오후6시까지 문의가능합니다.</p>
+  </footer>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>스쿨버스알림이</title>
+    <style>
+      /* CSS code goes here */
+      .head {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      .nav {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      nav ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+      }
+	  .footer {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #f8f8f8;
+        text-align: center;
+      }
+      .footer p {
+        margin: 5px;
+      }
+      .footer p:first-child {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .footer p:nth-child(2),
+      .footer p:nth-child(3) {
+        font-size: 14px;
+      }
+      .footer p:last-child {
+        font-style: italic;
+      }
+      nav li {
+        margin-right: 10px;
+      }
+
+      nav li:last-child {
+        margin-right: 0;
+      }
+      nav li.login-button {
+        margin-right: 0;
+        margin-left: auto;
+      }
+      main {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+      }
+
+      .container h2 {
+        text-align: center;
+      }
+
+      .container label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .container input[type="text"],
+      .container input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+      }
+
+      .container button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #757575;
+        color: white;
+        cursor: pointer;
+      }
+
+      .container button:hover {
+        background-color: #3f3f3f;
+      }
+      #replyBot {
+        background-color: #f0a80f;
+        width: 3.7rem;
+		height: 3.7rem;
+		border-radius: 30px;
+		position: fixed;
+		right: 2rem;
+		bottom:2rem;
+		z-index: 9999;
+	  }
+	   
+	  #replyBot > img {
+		padding: 4%;
+		margin: auto;
+		display: block;
+		width: 100%;
+		height: 100%;
+	   }
+	   		
+		#title {
+			text-decoration: none;
+		}
+		
+		#titleImg{
+			 width: 50px;
+			 height: 50px;
+		}
+		
+		#titleT {
+			color: 	#00ffcc;
+		}
+		
+		#titleT:hover {
+			color: #99ff99;
+		}
+		
+		input {
+			padding: 6px;
+		}
+		
+		#box1 {
+			padding: 50px;
+			background-color: #cce6ff;
+			border-radius: 10px;
+		}
+				
+		table {
+		  	border-collapse: collapse;
+		  	width: 100%;
+		}
+		
+		th, td {
+			text-align: left;
+		  	padding: 16px;
+		}
+		
+		#commitArea {
+			width: 80%;
+			height: 60px;
+		}
+		
+		#writeButton {
+			padding: 25px;
+			margin: 20px 0;
+			background-color: #cdcdcd;
+			border-radius: 10px;
+			text-align: center;
+			display: block;
+			color: #000;
+			font-size: 25px;
+			font-style: bold;
+			text-decoration: none;
+		}
+		
+		#writeButton:hover {
+			background-color: #e1e1e1;
+		}
+		
+		#replyBot {
+			background-color: #f0a80f;
+			width: 3.7rem;
+			height: 3.7rem;
+			border-radius: 30px;
+			position: fixed;
+			right: 2rem;
+			bottom:2rem;
+			z-index: 9999;
+		}
+
+		#replyBot > img {
+			padding: 4%;
+			margin: auto;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		#btnDeco {
+			padding: 10px;
+			border-radius: 10px;
+			font-weight: 1000;
+			background-color: #0af999;
+			box-shadow: #000 1px 1px;
+		}
+
+		#commentB {
+			margin-top: 10px;
+			padding: 10px;
+			border-radius: 10px;
+			background-color: #c1e5e1;
+		}
+
+		#btnM {
+			width: 15px;
+			height: 15px
+		}
+
+		#btnR {
+			padding: 10px;
+			border-radius: 10px;
+			font-weight: 1000;
+			background-color: rgba(255, 255, 255, 0);
+			box-shadow: #000 1px 1px;
+		}
+	</style>
+    </style>
+    <link rel="stylesheet" media="screen" href="/web.css"/>
+	<script src="/script.js"></script>
+  </head>
+  <body>				
+    <button id="replyBot" onclick="loginBot();">
+      <img src="https://cdn-icons-png.flaticon.com/512/4711/4711987.png"/>
+	</button>
+    <h1>스쿨버스 알림이</h1>
+    <nav calss="nav">
+      <ul class="nav ul">
+        <li class="nav li"><a href="http://localhost:8080/bus">버스정보</a></li>
+        <li class="nav li"><a href="http://localhost:8080/community">커뮤니티</a></li>
+        <li class="nav li login-button"><a href="http://localhost:8080/login">로그인</a></li>
+      </ul>
+    </nav>
+    
+<a id="busTitle" style="width:100%" href="http://localhost:8080/community">이전페이지</a>
+</div>
+    <div id="busTitle">
+	
+	<table id="box1" style="width: 100%">
+		<tr>
+			<td style="width: 20%">
+				<button id="btnDeco">수정하기</button>
+				<button id="btnDeco">삭제하기</button>
+			</td>
+			<td style="width: 80%"></td>
+		</tr>
+		
+		<tr>
+			<td><b>제목</b></td>
+			<td>[[${article.title}]]</td>
+		</tr>
+		<tr>
+			<td><b>작성자</b></td>
+			<td>[[${article.author}]]</td>
+		</tr>
+		<tr>
+			<td><b>작성일자</b></td>
+			<td>[[${article.articleDate}]]</td>
+		</tr>
+		<tr>
+			<td><b>내용</b></td>
+			<td>[[${article.body}]]</td>
+		</tr>
+		<tr>
+			<td>
+				<div th:if = "${filename != null}">
+					<span th:text="${filename}"></span>
+					<a th:href="@{/download?fileName={id}(id=${filename})}">다운로드</a>
+				</div>
+				<div th:unless = "${filename != null}" >
+					<p>업로드한 파일이 없습니다.</p>
+				</div>
+			</td>
+		</tr>		
+	</table>
+	<div id="commentB">
+		<h4>댓글남기기</h4>
+		<span>
+			<button id="btnR">
+				<img id="btnM" src="https://cdn-icons-png.flaticon.com/512/126/126473.png"/>
+				좋아요
+			</button>
+			<button id="btnR">
+				<img id="btnM" src="https://cdn-icons-png.flaticon.com/512/126/126504.png"/>
+				싫어요
+			</button>
+		</span>
+		<div style="padding: 10px;">
+			<textarea id="commitArea"></textarea>
+			<button id="btnDeco">등록하기</button>
+		</div>
+	</div>
+      </div>
+    <footer class="footer">
+      <p>C/S Center</p>
+      <p>email : hong@mail.com</p>
+      <p>kakao talk : hong123</p>
+      <p>오전 9시부터 오후6시까지 문의가능합니다.</p>
+    </footer>
+  </body>
+</html>

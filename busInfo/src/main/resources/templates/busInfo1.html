@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>스쿨버스알림이</title>
+    <style>
+      /* CSS code goes here */
+      .head {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      .nav {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      .main {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 20px;
+        min-height: calc(
+          70vh - 40px
+        ); /* Subtract the height of the pagination section */
+      }
+      .footer {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #f8f8f8;
+        text-align: center;
+      }
+      .footer p {
+        margin: 5px;
+      }
+      .footer p:first-child {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .footer p:nth-child(2),
+      .footer p:nth-child(3) {
+        font-size: 14px;
+      }
+      .footer p:last-child {
+        font-style: italic;
+      }
+      nav ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      nav li {
+        margin-right: 10px;
+      }
+
+      nav li:last-child {
+        margin-right: 0;
+      }
+      nav li.login-button {
+        margin-right: 0;
+        margin-left: auto;
+      }
+      /*테이블*/
+      .bulletin-board {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+        background-color: #f8f8f8;
+        border: 1px solid #ccc;
+        font-family: Arial, sans-serif;
+      }
+
+      .bulletin-board th,
+      .bulletin-board td {
+        padding: 10px;
+        text-align: left;
+      }
+
+      .bulletin-board thead th {
+        background-color: #333;
+        color: #fff;
+      }
+
+      .bulletin-board tbody tr:nth-child(odd) {
+        background-color: #f2f2f2;
+      }
+
+      .bulletin-board tbody td:first-child {
+        font-weight: bold;
+      }
+
+      .bulletin-board tbody td:last-child {
+        font-style: italic;
+      }
+
+      /*페이징*/
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .page-numbers {
+        display: flex;
+        gap: 10px;
+      }
+
+      .pagination button {
+        padding: 5px 10px;
+      }
+    </style>
+    <link rel="stylesheet" media="screen" href="/web.css"/>
+	<script src="/script.js"></script>
+  </head>
+  <body>				
+    <button id="replyBot" onclick="busInfo1();">
+      <img src="https://cdn-icons-png.flaticon.com/512/4711/4711987.png"/>
+	</button>
+    <h1>스쿨버스 알림이</h1>
+    <nav calss="nav">
+      <ul class="nav ul">
+        <li class="nav li"><a href="http://localhost:8080/bus">버스정보</a></li>
+        <li class="nav li"><a href="http://localhost:8080/community">커뮤니티</a></li>
+        <li class="nav li login-button"><a href="http://localhost:8080/login">로그인</a></li>
+      </ul>
+    </nav>
+    <nav calss="nav">
+      <ul class="nav ul">
+        <li class="nav li"><a href="http://localhost:8080/bus1">A권역</a></li>
+        <li class="nav li"><a href="http://localhost:8080/bus2">B권역</a></li>
+        <li class="nav li"><a href="http://localhost:8080/bus3">C권역</a></li>
+      </ul>
+    </nav>
+    
+    <div id="busTitle">
+      <ul>
+        <li class="infoState"><b>등교</b></li>
+        <li class="infoDest">A마을 방면</li>
+        <li class="infoBus">[차량수] 1/1 [차량번호] 1254 [좌석수] 26/45</li>
+      </ul>
+    </div>
+
+    <main class="main">
+      <div class="container">
+      	<div style="display: flex">
+          <div style="text-align: center; margin-top: 2px; ">
+      	    <div class="circle">1</div>
+    	    <span>A정류장</span>
+      	  </div>
+    	  <div class="rect"></div>
+          <div style="text-align: center; margin-top: 2px;">
+      	    <div class="circle">2</div>
+    	    <span>B정류장</span>
+      	  </div>
+    	  <div class="rect"></div>
+          <div style="text-align: center; margin-top: 2px;">
+      	    <div class="circle">3</div>
+    	    <span>C정류장</span>
+      	  </div>
+    	  <div class="rect"></div>
+          <div style="text-align: center; margin-top: 2px;">
+      	    <div class="circle">4</div>
+    	    <span>D정류장</span>
+      	  </div>
+    	  <div class="rect"></div>
+          <div style="text-align: center; margin-top: 2px;">
+      	    <div class="circle" style="background: #F08650;">5</div>
+    	    <span>E정류장</span>
+      	  </div>
+    	  <div class="rect"  style="background: #F08577;"></div>
+          <div style="text-align: center; margin-top: 2px;">
+      	    <div class="circle" style="background: #FF7F27;">6</div>
+    	    <span>F정류장</span>
+      	  </div>
+    	  <div class="rect"></div>
+          <div style="text-align: center; margin-top: 2px;">
+      	    <div class="circle">7</div>
+    	    <span>G정류장</span>
+      	  </div>
+    	  <div class="rect"></div>
+          <div style="text-align: center; margin-top: 2px;">
+      	    <div class="circle">8</div>
+    	    <span>H정류장</span>
+      	  </div>
+      	</div>
+	  </div>
+    </main>
+  </body>
+  <footer class="footer">
+    <p>C/S Center</p>
+    <p>email : hong@mail.com</p>
+    <p>kakao talk : hong123</p>
+    <p>오전 9시부터 오후6시까지 문의가능합니다.</p>
+  </footer>
+</html>
